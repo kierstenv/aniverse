@@ -16,6 +16,9 @@ if (process.env.JAWSDB_URL) {
     {
       host: 'localhost',
       dialect: 'mysql',
+      dialectOptions: {
+        socketPath: '/tmp/mysql.sock'
+      },
       port: 3306,
     },
   );
