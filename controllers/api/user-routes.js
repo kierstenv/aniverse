@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 
 // get all users
-router.get('/',withAuth, (req, res) => {
+router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -87,8 +87,8 @@ router.post('/', (req, res) => {
       
       let info = await transporter.sendMail({
         from: "aniverse123@outlook.com",
-        to:req.body.email ,
-        subject:"Congratulations you've created your Aniverse Account!",
+        to: req.body.email,
+        subject: "Congratulations you've created your Aniverse Account!",
         text: "You're Account has been successfully created!"
       });
       console.log("Message Sent", info.messageId);
