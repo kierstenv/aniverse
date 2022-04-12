@@ -86,8 +86,8 @@ router.post('/', (req, res) => {
       
       let info = await transporter.sendMail({
         from: "aniverse123@outlook.com",
-        to:req.body.email ,
-        subject:"Congratulations you've created your Aniverse Account!",
+        to: req.body.email,
+        subject: "Congratulations you've created your Aniverse Account!",
         text: "You're Account has been successfully created!"
       });
       console.log("Message Sent", info.messageId);
