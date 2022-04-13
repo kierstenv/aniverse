@@ -2,17 +2,14 @@
 and (min-height: 480px)
 and (min-width: 768px) {
   main {
-    grid-template-columns: 50%;
-    grid-column-gap: 10%;
     grid-template-rows: max-content;
-    grid-row-gap: 5%;
   }
 
   #sidebar button {
-    align-items: center;
-    justify-content: center;
     height: 32px;
     width: 32px;
+    align-items: center;
+    justify-content: center;
   }
 
   button#sidebar-btn a {
@@ -75,6 +72,10 @@ and (min-width: 768px) {
     grid-row-start: 2;
     width: 100%;
   }
+
+  div#dashboard-btn {
+    right: 25%;
+  }
 }
 
 @media screen
@@ -86,6 +87,10 @@ and (orientation: portrait) {
 
   .dashboard-show {
     justify-content: space-around;
+  }
+  
+  .new-post-form button {
+    margin-top: 2px;
   }
 
   h3 {

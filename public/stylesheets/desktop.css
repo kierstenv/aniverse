@@ -16,6 +16,11 @@ and (min-width: 1024px) {
   a {
     font-size: initial;
   }
+  
+  main {
+    margin: 20px 62px;
+    padding: 0;
+  }
 
   button.btn {
     font-size: inherit;
@@ -54,7 +59,13 @@ and (min-width: 1024px) {
   }
 
   .edit-link {
-    bottom: 6px;
-    right: 9px;
+    bottom: 4px;
+    right: 8px;
+  }
+
+  #dashboard-btn {
+    margin-bottom: 0;
+    top: -30%;
+    right: 21%;
   }
 }

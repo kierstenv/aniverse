@@ -19,9 +19,9 @@ body::-webkit-scrollbar {
 }
 
 .wrapper {
+  margin: 0 auto;
   width: 100%;
   min-height: 100%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -222,8 +222,9 @@ h3 {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 3;
-  background-color: rgb(94 47 47 / 48%);
   padding: 1px 3px 2px;
+  background-color: rgb(94 47 47 / 48%);
+  text-shadow: 2px 1px 2px rgb(255 255 255 / 42%), 1px 1px 4px rgb(94 47 47 / 76%);
 }
 
 .edit-link {
@@ -260,9 +261,8 @@ li a:hover {
   display: none;
 }
 
-.meta {
+#post-meta {
   padding: 4px 6px 5px;
-  text-shadow: 2px 1px 2px rgb(255 255 255 / 42%), 1px 1px 4px rgb(94 47 47 / 76%);
 }
 
 .meta a {
@@ -293,9 +293,12 @@ form.comment-form {
 
 .column-view {
   display: inline-grid;
+  grid-template-columns: 50%;
+  grid-column-gap: 10%;
+  grid-row-gap: 5%;
 }
 
-#comment-input {
+#comment-input, #post-input {
   margin-bottom: 18px;
   background: #fff5ebcc;
   border-radius: 3px;
@@ -303,18 +306,17 @@ form.comment-form {
   width: 100%;
 }
 
-textarea, input {
-  padding: .5%;
-  border-radius: 3px;
+textarea {
+  min-height: 100px;
 }
 
-textarea {
-  padding: 4px 6px;
+textarea, input {
   min-width: 100%;
-  min-height: 100px;
+  padding: 4px 6px;
   background-color: #3d1d1d99;
   color: white;
   border: 1px solid;
+  border-radius: 1%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -351,18 +353,48 @@ textarea:focus, input:focus {
 }
 
 /* edit posts */
-.edit-page {
+#edit-post-page {
+  margin-top: -7px;
   display: inline-grid;
+  grid-template-columns: 34vw 42vw;
+  grid-template-rows: min-content;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
-a#dashboard-btn {
+div#dashboard-btn {
+  display: inline-flex;
+  grid-row-end: 1;
+  position: relative;
+  right: 14%;
+  align-items: center;
   font-size: larger;
   color: black;
   text-shadow: 1px 1px 2px white, 2px 2px 4px #804343;
 }
 
+#dashboard-btn button {
+  margin-right: 6px;
+  padding: 0 2px 5px;
+  height: 28px;
+  width: 28px;
+}
+
+#edit-post {
+  grid-row-start: 2;
+}
+
+#edit-post h2 {
+  color: black;
+  text-shadow: 1px 1px 2px white, 2px 2px 4px #541c1c;
+}
+
 .edit-post-form {
   margin: 2% 0 5%;
+}
+
+.edit-post-form .meta {
+  margin-bottom: 14px;
 }
 
 .delete-post-btn {
@@ -371,6 +403,19 @@ a#dashboard-btn {
 
 .delete-post-btn:hover {
   background-color: #e34848;
+}
+
+#add-comment {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  width: 100%;
+}
+
+#your-comments {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: 42vw;
 }
 
 footer {
