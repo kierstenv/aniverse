@@ -1,35 +1,49 @@
-<article>
-  <a href="/dashboard" id="dashboard-btn"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      {{!-- <span>({{format_url post.post_url}})</span> --}}
+<section id="edit-post-page">
+  <div id="dashboard-btn">
+    <button>
+      <a href="/dashboard">&larr;</a> 
+    </button>
+    <h2>Back to dashboard</h2>
+  </div>
+
+  <article id="edit-post">
+    <h2>
+      Edit Post
+    </h2>
+    <form class="edit-post-form">
+      <div id="post-input">
+        <input name="post-title" type="text" value="{{post.title}}" />
+        {{!-- <span>({{format_url post.post_url}})</span> --}}
+      </div>
+      <div class="meta">
+        by you on {{format_date post.created_at}}
+        |
+        <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      </div>
+      <button type="submit">Save post</button>
+      <button type="button" class="delete-post-btn">Delete post</button>
+    </form>
+  </article>
+
+  <form class="comment-form" id="add-comment">
+    <div id="comment-input">
+      <textarea name="comment-body"></textarea>
     </div>
+
     <div>
-      by you on {{format_date post.created_at}}
-      |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <button type="submit">add comment</button>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
   </form>
-</article>
 
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
+  <div id="your-comments">
+    <h2>
+      Your Comments
+    </h2>
+
+    {{> comments post.comments}}
   </div>
 
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-
-{{> comments post.comments}}
-
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+  <script src="/javascript/edit-post.js"></script>
+  <script src="/javascript/delete-post.js"></script>
+  <script src="/javascript/comment.js"></script>
+</section>

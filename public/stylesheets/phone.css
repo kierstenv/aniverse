@@ -38,15 +38,19 @@ and (max-width: 480px),
     width: 40%;
   }
   
+  h2 {
+    font-size: small;
+  }
+  
   #new-post {
     padding-left: 4px;
     width: 54%;
   }
   
-  h2 {
-    font-size: small;
+  .new-post-form button {
+    margin-top: 4px;
   }
-  
+
   ol {
     padding: 0 10px;
   }
@@ -71,16 +75,49 @@ and (max-width: 480px),
     padding: 1px 3px 2px;
     font-size: larger;
   }
+
+  #edit-post-page {
+    display: inline;
+  }
+
+  div#dashboard-btn {
+    right: 2%;
+  }
+
+  #your-comments {
+    width: 100%;
+  }
 }
 
 @media screen 
 and (max-height: 480px)
 and (orientation: landscape) {
+  .new-post-form button {
+    margin-top: 2px;
+  }
+
   h3 {
     background: radial-gradient(circle at left, transparent 4%, rgb(84 28 28 / 68%) 5%, rgb(94 47 47 / 66%) 96%);
   }
 
   .comment-form {
     width: 66%;
+  }
+
+  #edit-post-page {
+    margin-top: -2px;
+    display: inline-grid;
+  }
+
+  div#dashboard-btn {
+    right: 24%;
+  }
+
+  #add-comment {
+    margin-top: 12px;
+  }
+
+  .form-body {
+    bottom: -3rem;
   }
 }

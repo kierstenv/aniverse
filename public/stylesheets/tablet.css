@@ -27,6 +27,10 @@ and (min-width: 480px) and (max-width: 768px) and (orientation: portrait),
   #dashboard h2 {
     font-size: larger;
   }
+  
+  form label {
+    margin-bottom: 3px;
+  }
 
   li {
     margin: 22px 0;
@@ -37,7 +41,6 @@ and (min-width: 480px) and (max-width: 768px) and (orientation: portrait),
     padding-left: 8px;
     width: 66px;
   }
-
 
   .post .image-wrapper {
     width: 60px;
@@ -59,12 +62,18 @@ and (min-width: 480px) and (max-width: 768px) and (orientation: portrait),
     padding: 2px 4px 2px;
   }
 
-  .comment-form {
-    width: 60%;
-  }
-
   .edit-link {
     bottom: 4px;
     right: 8px;
+  }
+
+  div#dashboard-btn {
+    margin-bottom: 4px;
+    top: -14%;
+    right: 21%;
+  }
+
+  .comment-form {
+    width: 60%;
   }
 }
